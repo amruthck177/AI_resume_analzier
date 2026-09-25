@@ -1,0 +1,886 @@
+/* AI Resume Analyzer — Editorial Design System Styles */
+
+.app-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--paper);
+}
+
+/* ==========================================================================
+   1. STICKY SCORE HEADER
+   ========================================================================== */
+.score-header-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--paper);
+  border-bottom: 1px solid var(--rule);
+  padding: 12px 24px;
+  backdrop-filter: blur(8px);
+}
+
+.score-header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.score-header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  padding: 6px 12px;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  transition: all 0.15s ease;
+  background: var(--paper);
+}
+
+.back-btn:hover {
+  color: var(--ink);
+  border-color: var(--ink-soft);
+}
+
+.app-branding {
+  display: flex;
+  flex-direction: column;
+}
+
+.app-kicker {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+}
+
+.app-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+.score-header-metrics {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.overall-score-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  border-right: 1px solid var(--rule);
+  padding-right: 20px;
+}
+
+.metric-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--ink-soft);
+}
+
+.overall-score-value {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+}
+
+.overall-score-value .big-num {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.overall-score-value .scale-denominator {
+  font-size: 14px;
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+
+.categories-list {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.category-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  border-radius: 2px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink);
+  transition: all 0.15s ease;
+}
+
+.category-pill:hover {
+  border-color: var(--ink-soft);
+}
+
+.category-pill.active {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+
+.cat-label {
+  color: inherit;
+  opacity: 0.85;
+}
+
+.cat-value {
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   2. UPLOAD SCREEN
+   ========================================================================== */
+.upload-container {
+  max-width: 620px;
+  margin: 64px auto;
+  padding: 0 20px;
+}
+
+.upload-card {
+  border: 1px solid var(--rule);
+  background-color: #fafbf8;
+  padding: 36px 32px;
+}
+
+.upload-header {
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.upload-kicker {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.upload-title {
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+}
+
+.upload-subtitle {
+  font-size: 14px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+.mode-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 24px;
+}
+
+.tab-btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  border-bottom: 2px solid transparent;
+  transition: all 0.15s ease;
+}
+
+.tab-btn:hover {
+  color: var(--ink);
+}
+
+.tab-btn.active {
+  color: var(--ink);
+  border-bottom-color: var(--ink);
+  font-weight: 600;
+}
+
+.dropzone-box {
+  border: 1px dashed var(--rule);
+  background-color: var(--paper);
+  padding: 36px 24px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 20px;
+}
+
+.dropzone-box:hover, .dropzone-box.drag-over {
+  border-color: var(--ink-soft);
+  background-color: #e8eae3;
+}
+
+.hidden-file-input {
+  display: none;
+}
+
+.dropzone-icon {
+  color: var(--ink-soft);
+  margin-bottom: 12px;
+}
+
+.drop-main-text {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+.drop-sub-text {
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+
+.file-selected-view {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: #ffffff;
+  border: 1px solid var(--rule);
+}
+
+.file-info-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.file-icon {
+  color: var(--ink);
+}
+
+.file-details {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.file-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.file-size {
+  font-size: 12px;
+  color: var(--ink-soft);
+}
+
+.remove-file-btn {
+  color: var(--ink-soft);
+  padding: 4px;
+  transition: color 0.15s ease;
+}
+
+.remove-file-btn:hover {
+  color: var(--flag-red);
+}
+
+.paste-text-box {
+  margin-bottom: 20px;
+}
+
+.resume-textarea {
+  width: 100%;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  padding: 14px;
+  border: 1px solid var(--rule);
+  background: #ffffff;
+  color: var(--ink);
+  resize: vertical;
+}
+
+/* JD Card */
+.jd-input-card {
+  border: 1px solid var(--rule);
+  background-color: var(--paper);
+  margin-bottom: 24px;
+}
+
+.jd-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  cursor: pointer;
+}
+
+.jd-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.jd-badge {
+  font-size: 11px;
+  padding: 2px 6px;
+  border: 1px solid var(--rule);
+  color: var(--ink-soft);
+  border-radius: 2px;
+}
+
+.jd-body {
+  padding: 0 14px 14px 14px;
+}
+
+.jd-textarea {
+  width: 100%;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  padding: 10px;
+  border: 1px solid var(--rule);
+  background: #ffffff;
+  color: var(--ink);
+  resize: vertical;
+}
+
+.jd-hint {
+  font-size: 12px;
+  color: var(--ink-soft);
+  margin-top: 6px;
+}
+
+.upload-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.sample-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--ink-soft);
+  border: 1px dashed var(--rule);
+  padding: 8px 14px;
+  transition: all 0.15s ease;
+}
+
+.sample-btn:hover {
+  color: var(--ink);
+  border-color: var(--ink-soft);
+}
+
+.analyze-submit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--ink);
+  color: var(--paper);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 22px;
+  border-radius: 2px;
+  transition: opacity 0.15s ease;
+  margin-left: auto;
+}
+
+.analyze-submit-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.analyze-submit-btn:not(:disabled):hover {
+  opacity: 0.9;
+}
+
+/* ==========================================================================
+   3. PROGRESS & LOADING STATE
+   ========================================================================== */
+.progress-screen {
+  max-width: 540px;
+  margin: 100px auto;
+  padding: 0 20px;
+}
+
+.progress-card {
+  border: 1px solid var(--rule);
+  background: #fafbf8;
+  padding: 40px 36px;
+}
+
+.progress-header {
+  margin-bottom: 28px;
+}
+
+.progress-kicker {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.progress-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.progress-sub {
+  font-size: 14px;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+.progress-steps-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.step-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.step-item.pending {
+  color: var(--rule);
+}
+
+.step-item.current {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.step-item.done {
+  color: var(--flag-green);
+}
+
+.step-icon-wrap {
+  width: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ==========================================================================
+   4. ERROR STATE
+   ========================================================================== */
+.error-screen {
+  max-width: 520px;
+  margin: 100px auto;
+  padding: 0 20px;
+}
+
+.error-card {
+  border: 1px solid var(--flag-red);
+  background: #ffffff;
+  padding: 36px 32px;
+  text-align: center;
+}
+
+.error-icon-box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--flag-red);
+  margin-bottom: 16px;
+}
+
+.error-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 12px;
+}
+
+.error-message {
+  font-size: 14px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.error-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: 2px;
+}
+
+/* ==========================================================================
+   5. RESULTS SCREEN — MANUSCRIPT STAGE
+   ========================================================================== */
+.results-container {
+  flex: 1;
+  padding: 32px 24px 80px 24px;
+}
+
+.manuscript-stage {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  position: relative;
+}
+
+/* Resume Document Pane */
+.resume-document-pane {
+  flex: 1;
+  max-width: var(--doc-max-width);
+}
+
+.resume-sheet {
+  background: #ffffff;
+  border: 1px solid var(--rule);
+  padding: 48px 52px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.resume-header {
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 24px;
+  margin-bottom: 32px;
+}
+
+.candidate-name {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.candidate-contact {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+.resume-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.resume-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.section-divider {
+  height: 1px;
+  background-color: var(--ink);
+  margin-bottom: 14px;
+  opacity: 0.15;
+}
+
+.section-items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.resume-item {
+  position: relative;
+  font-family: var(--font-serif);
+  font-size: 16.5px;
+  line-height: 1.6;
+  color: var(--ink);
+  transition: all 0.15s ease;
+  padding: 4px 6px;
+  border-radius: 2px;
+  max-width: 68ch; /* Capped for reading speed */
+}
+
+.resume-item.flagged-item {
+  cursor: pointer;
+}
+
+.resume-item.flag-amber {
+  border-left: 2px solid transparent;
+}
+
+.resume-item.flag-red {
+  border-left: 2px solid transparent;
+}
+
+.resume-item.flag-green {
+  border-left: 2px solid transparent;
+}
+
+.resume-item.flagged-item:hover,
+.resume-item.active-target {
+  background-color: rgba(27, 29, 34, 0.04);
+}
+
+.resume-item.active-target.flag-amber {
+  border-left-color: var(--flag-amber);
+}
+
+.resume-item.active-target.flag-red {
+  border-left-color: var(--flag-red);
+}
+
+.resume-item.active-target.flag-green {
+  border-left-color: var(--flag-green);
+}
+
+.item-subheading {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.bullet-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.bullet-disc {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--ink-soft);
+}
+
+.item-text {
+  font-family: var(--font-serif);
+  font-size: 16.5px;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   6. ANNOTATION MARGIN
+   ========================================================================== */
+.annotation-margin {
+  width: var(--margin-width);
+  position: relative;
+  min-height: 400px;
+}
+
+.margin-legend {
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 8px;
+  margin-bottom: 16px;
+}
+
+.legend-title {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+}
+
+.notes-stack {
+  position: relative;
+}
+
+.note-position-wrapper {
+  position: absolute;
+  left: 0;
+  right: 0;
+  transition: transform 0.25s ease-out;
+}
+
+.connecting-rule {
+  position: absolute;
+  left: -24px;
+  top: 14px;
+  width: 24px;
+  height: 1px;
+  background-color: var(--ink-soft);
+  opacity: 0.6;
+}
+
+/* Annotation Note */
+.annotation-note {
+  border-left: 2px solid var(--rule);
+  background-color: #ffffff;
+  padding: 10px 12px;
+  border-top: 1px solid var(--rule);
+  border-right: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  font-family: var(--font-mono);
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  margin-bottom: 12px;
+}
+
+.annotation-note:hover,
+.annotation-note.highlighted {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  transform: translateX(2px);
+}
+
+.annotation-note.flag-amber {
+  border-left: 2px solid var(--flag-amber);
+}
+
+.annotation-note.flag-red {
+  border-left: 2px solid var(--flag-red);
+}
+
+.annotation-note.flag-green {
+  border-left: 2px solid var(--flag-green);
+}
+
+.note-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.note-symbol {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.annotation-note.flag-amber .note-symbol,
+.annotation-note.flag-amber .note-label {
+  color: var(--flag-amber);
+}
+
+.annotation-note.flag-red .note-symbol,
+.annotation-note.flag-red .note-label {
+  color: var(--flag-red);
+}
+
+.annotation-note.flag-green .note-symbol,
+.annotation-note.flag-green .note-label {
+  color: var(--flag-green);
+}
+
+.note-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.note-fix {
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: var(--ink);
+}
+
+/* Mobile inline annotations */
+.mobile-inline-annotations {
+  display: none;
+  margin-top: 8px;
+}
+
+/* ==========================================================================
+   7. RESPONSIVE BREAKPOINT (< 800px)
+   ========================================================================== */
+@media (max-width: 800px) {
+  .score-header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .score-header-metrics {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .overall-score-block {
+    border-right: none;
+    padding-right: 0;
+    align-items: flex-start;
+  }
+
+  .categories-list {
+    flex-wrap: wrap;
+  }
+
+  .manuscript-stage {
+    flex-direction: column;
+  }
+
+  .resume-document-pane {
+    max-width: 100%;
+  }
+
+  .resume-sheet {
+    padding: 28px 20px;
+  }
+
+  .annotation-margin {
+    display: none;
+  }
+
+  .mobile-inline-annotations {
+    display: block;
+  }
+}

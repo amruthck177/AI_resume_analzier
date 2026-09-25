@@ -1,0 +1,82 @@
+:root {
+  /* Design Tokens from DESIGN.md */
+  --paper: #F1F2EE;
+  --ink: #1B1D22;
+  --ink-soft: #5B5F66;
+  --rule: #D6D7D1;
+  --flag-amber: #9C6B14;
+  --flag-red: #8C3230;
+  --flag-green: #33593C;
+
+  /* Typography Families */
+  --font-serif: 'Source Serif 4', Georgia, Cambria, 'Times New Roman', serif;
+  --font-mono: 'IBM Plex Mono', 'SF Mono', Consolas, Monaco, monospace;
+
+  /* Spacing Units */
+  --unit: 8px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-8: 48px;
+  --space-10: 64px;
+
+  /* Layout */
+  --doc-max-width: 680px;
+  --margin-width: 290px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background-color: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--paper);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--rule);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ink-soft);
+}
+
+/* Selection */
+::selection {
+  background: rgba(27, 29, 34, 0.12);
+  color: var(--ink);
+}
+
+/* Buttons */
+button {
+  font-family: var(--font-mono);
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+button:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}

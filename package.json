@@ -1,0 +1,10 @@
+{
+  "name": "ai-resume-analyzer",
+  "version": "1.0.0",
+  "description": "Personal editorial resume analyzer with line-anchored margin annotations",
+  "scripts": {
+    "dev:backend": "backend\\.venv\\Scripts\\python -m uvicorn app.main:app --app-dir backend --host 127.0.0.1 --port 8000 --reload",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev": "node start_dev.js"
+  }
+}
